@@ -4,7 +4,25 @@
 % load various required standard packages
 % let LaTeX find those
 
-\RequirePackage[english]{babel}
+%\RequirePackage[english]{babel}
+%\usepackage[portuguese]{babel}
+%encoding for portuguese language
+%--------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%--------------------------------------
+
+%Portuguese-specific commands
+%--------------------------------------
+\usepackage[brazil]{babel}
+%--------------------------------------
+
+%Hyphenation rules
+%--------------------------------------
+\usepackage{hyphenat}
+\hyphenation{mate-mática recu-perar}
+%-------------------------------------
+%\RequirePackage[english]{babel}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{extarrows}
