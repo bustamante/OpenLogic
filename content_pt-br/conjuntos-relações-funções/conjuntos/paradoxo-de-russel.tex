@@ -1,0 +1,94 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: russells-paradox
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+
+\begin{document}
+
+\olfileid{sfr}{set}{rus}
+\olsection{Paradoxo de Russell}
+%\olsection{Russell's Paradox}
+
+Nós dizemos que alguém pode definir conjuntos pela especificação de uma propriedadeque seus !!{elemento}s compartilham, e.g., definindo o conjunto dos irmãos do Richard como
+\[
+S = \Setabs{x}{x \text{ é um irmão de Richard}}.
+\]
+No contexto mais geral da Matemática devemos ser cuidadosos, entretando:
+nem toda propriedade leva ela mesma à \emph{compreenção}. Algumas propriedades não definem conjuntos. Se fosse, nós correríamos em contradição. Um exemplo de tal caso é o paradoxo de Russel.
+
+%We said that one can define sets by specifying a property that its
+%!!{element}s share, e.g., defining the set of Richard's siblings as
+%\[
+%S = \Setabs{x}{x \text{ is a sibling of Richard}}.
+%\]
+%In the very general context of mathematics one must be careful,
+%however: not every property lends itself to \emph{comprehension}. Some
+%properties do not define sets. If they did, we would run into
+%outright contradictions. One example of such a case is Russell's
+%Paradox.
+
+Conjuntos podem ser elementos !!{elemento}s de outros conjuntos---por 
+exemplo, o conjunto potência de~$X$ é feito de conjuntos. E logo faz 
+sentido, claramente, perguntar ou investigar se um conjunto é !!{elemento}
+de outro conjunto. Poderia um conjunto ser membro dele mesmo? 
+Nada sobre a idéia de um conjunto parece descartar isso. Por exemplo, 
+certamente \emph{todos} os conjuntos formam uma coleção de objetos, então 
+devemos ser capazes de coletá-los em um único conjunto--- o conjunto de 
+todos os conjuntos. E, sendo um conjunto, seria um !!{elemento} do 
+conjunto de todos os conjuntos.
+
+%Sets may be !!{element}s of other sets---for instance, the power set
+%of a set~$X$ is made up of sets. And so it makes sense, of course, to
+%ask or investigate whether a set is !!a{element} of another set. Can
+%a set be a member of itself?  Nothing about the idea of a set seems to
+%rule this out. For instance, surely \emph{all} sets form a collection
+%of objects, so we should be able to collect them into a single
+%set---the set of all sets. And it, being a set, would be !!a{element}
+%of the set of all sets.
+
+O Paradoxo de Russell surge quando consideramos a propriedade de não conter à si mesmo como um !!{elemento}. O conjunto de todos os conjuntos não tem esta propriedade, mas todos os conjuntos que encontramos até agora a têm. $\Nat$ não é um !!{elemento} de~$\Nat$, dado que é um conjunto, e não um número natural. $\Pow{X}$ geralmente não é um !!{elemento} de~$\Pow{X}$; e.g.,
+$\Pow{\Real} \notin \Pow{\Real}$ dado que é um conjunto de conjuntos de números reais, não um conjunto de números reais.
+Como seria se assumissemos que existe um conjunto de todos os conjuntos
+que não possuem a si mesmo como um !!{elemento}? Será que
+\[
+R = \Setabs{x}{x \notin x}
+\]
+existe?
+
+%Russell's Paradox arises when we consider the property of not having
+%itself as !!a{element}. The set of all sets does not have this
+%property, but all sets we have encountered so far have it. $\Nat$ is
+%not !!a{element} of~$\Nat$, since it is a set, not a natural
+%number. $\Pow{X}$ is generally not !!a{element} of~$\Pow{X}$; e.g.,
+%$\Pow{\Real} \notin \Pow{\Real}$ since it is a set of sets of real
+%numbers, not a set of real numbers. What if we suppose that there is
+%a set of all sets that do not have themselves as !!a{element}? Does
+%\[
+%R = \Setabs{x}{x \notin x}
+%\]
+%exist?
+
+Se $R$ existe, faz sentido perguntar se $R \in R$ ou não---ou $\in R$ ou $\notin R$. Suponha que a construção anterior seja verdadeira, i.e., $R \in R$. $R$~foi definido como um conjunto de todos os conjuntos que não são !!{elemento}s de si mesmo, e logo se $R \in R$, então $R$ não possui esta propriedade da definição de~$R$. Mas, somente conjuntos que possuem esta propriedade estão em~$R$, logo, $R$ não pode ser um !!{elemento} de~$R$, i.e., $R \notin
+R$. Todavia, $R$ não pode ser simultaneamente um !!{elemento} de~$R$ e não ser, logo temos uma contradição.
+
+%If $R$ exists, it makes sense to ask if $R \in R$ or not---it must be
+%either $\in R$ or $\notin R$. Suppose the former is true, i.e., $R \in
+%R$. $R$~was defined as the set of all sets that are not !!{element}s
+%of themselves, and so if $R \in R$, then $R$ does not have this
+%defining property of~$R$. But only sets that have this property are
+%in~$R$, hence, $R$ cannot be !!a{element} of~$R$, i.e., $R \notin
+%R$. But $R$ can't both be and not be !!a{element} of~$R$, so we have a
+%contradiction.
+
+Dado que suposição que $R \in R$ leva a uma contradição, nós temos que $R \notin R$. Mas isso também nos leva a uma contradição! {}
+Para se $R \notin R$, não satisfaz propriedade definidora de ~$R$, e logo seria um !!{elemento} de $R$ assim como todos os outros conjuntos que não contém a simesmo. E novamente, não poderia ser simultaneamente um não-elemento e um !!{elemento} de~$R$.
+
+%Since the assumption that $R \in R$ leads to a contradiction, we have
+%$R \notin R$. But this also leads to a contradiction!{} For if $R
+%\notin R$, it does have the defining property of~$R$, and so would be
+%!!a{element} of $R$ just like all the other non-self-containing sets.
+%And again, it can't both not be and be !!a{element} of~$R$.
+
+\end{document}

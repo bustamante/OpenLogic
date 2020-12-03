@@ -1,0 +1,260 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: unions-and-intersections
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{set}{uni}
+%\olsection{Unions and Intersections}
+\olsection{União e Interseção}
+
+
+\begin{explain}
+Nós podemos definir novos conjuntospor abstração, e a propriedadeutilizada para definir o novo conjunto
+pode mencionar conjuntos que já foram definidos. Por exemplo,
+se $X$ e $Y$ são conjuntos, o conjunto $\Setabs{x}{x \in X \lor x \in Y}$
+define um conjunto que consiste em todos aqueles objetos que são !!{elemento}s tanto de $X$ quanto de~$Y$, i.e., é o conjunto que combina eles---é muito útil e comum, e logo nós daremos um nome e um símbolo
+\end{explain}
+%\begin{explain}
+%We can define new sets by abstraction, and the property used to define
+%the new set can mention sets we've already defined. So for instance,
+%if $X$ and $Y$ are sets, the set $\Setabs{x}{x \in X \lor x \in Y}$
+%defines a set which consists of all those objects which are
+%!!{element}s of either $X$ or~$Y$, i.e., it's the set that combines
+%the !!{element}s of $X$ and $Y$. This operation on sets---combining
+%them---is very useful and common, and so we give it a name and a symbol.
+%\end{explain}
+
+\begin{defn}[União]
+A \emph{união} de dois conjuntos $X$ e $Y$, escrito $X \cup Y$, 
+é o conjunto de todos os objetos que são !!{elemento}s de $X$, $Y$, ou ambos.
+\[
+X \cup Y = \Setabs{x}{x \in X \lor x\in Y}
+\]
+\end{defn}
+
+%\begin{defn}[Union]
+%The \emph{union} of two sets $X$ and $Y$, written $X \cup Y$, is the
+%set of all things which are !!{element}s of $X$, $Y$, or both.
+%\[
+%X \cup Y = \Setabs{x}{x \in X \lor x\in Y}
+%\]
+%\end{defn}
+
+\begin{figure}
+  \centerline{\includegraphics[width=\olphotowidth]
+    {\olpath/assets/diagrams/union.tikz}}
+  \caption{A união $X \cup Y$ de dois conjuntos é o conjunto de !!{elemento}s de
+    $X$ juntos com aqueles de~$Y$.}
+  %\caption{The union $X \cup Y$ of two sets is set of !!{element}s of
+%    $X$ together with those of~$Y$.}
+\end{figure}
+
+\begin{ex}
+Dado que a multiplicidade dos !!{elemento}s não importa, a união de dois
+conjuntos que possuem um !!{elemento} em comum contém este !!{elemento} uma única vez,
+e.g., $\{ a, b, c\} \cup \{ a, 0, 1\} = \{a, b, c, 0, 1\}$.
+
+A união de um conjunto e um de seus subconjuntos é igual ao conjunto maior: $\{a, b, c \} \cup \{a \} = \{a, b, c\}$.
+
+A união de um conjunto com o conjunto vazio é idêntico à esse conjunto: $\{a, b, c \} \cup \emptyset = \{a, b, c \}$.
+\end{ex}
+
+%\begin{ex}
+%Since the multiplicity of !!{element}s doesn't matter, the union of two
+%sets which have !!a{element} in common contains that !!{element} only once,
+%e.g., $\{ a, b, c\} \cup \{ a, 0, 1\} = \{a, b, c, 0, 1\}$.
+
+%The union of a set and one of its subsets is just the bigger set: $\{a,
+%b, c \} \cup \{a \} = \{a, b, c\}$.
+
+%The union of a set with the empty set is identical to the set: $\{a,
+%b, c \} \cup \emptyset = \{a, b, c \}$.
+%\end{ex}
+
+\begin{prob}
+Prove rigorosamente que se $X \subseteq Y$, então $X \cup Y = Y$.
+\end{prob}
+
+%\begin{prob}
+%Prove rigorously that if $X \subseteq Y$, then $X \cup Y = Y$.
+%\end{prob}
+
+\begin{explain}
+A operação que forma o conjunto de todos os !!{elemento}s que $X$ e $Y$
+tem em comum é chamada de \emph{interseção}.
+\end{explain}
+
+%\begin{explain}
+%The operation that forms the set of all !!{element}s that $X$ and $Y$
+%have in common is called their \emph{intersection}.
+%\end{explain}
+
+\begin{defn}[Interseção]
+A \emph{interseção} de dois conjuntos $X$ e $Y$, escrito como $X \cap Y$, é
+o conjunto de todos os objetos que são !!{elemento}s de ambos $X$ e~$Y$.
+\[
+X \cap Y = \Setabs{x}{x \in X \land x\in Y}
+\]
+Dois conjuntos são chamados \emph{disjuntos} se sua interseção
+é vazia. Isso significa que ele não possuem !!{elemento}s em comum.
+\end{defn}
+
+%\begin{defn}[Intersection]
+%The \emph{intersection} of two sets $X$ and $Y$, written $X \cap Y$, is
+%the set of all things which are !!{element}s of both $X$ and~$Y$.
+%\[
+%X \cap Y = \Setabs{x}{x \in X \land x\in Y}
+%\]
+%Two sets are called \emph{disjoint} if their intersection is
+%empty. This means they have no !!{element}s in common.
+%\end{defn}
+
+\begin{figure}
+  \centerline{\includegraphics[width=\olphotowidth]
+    {\olpath/assets/diagrams/intersection.tikz}}
+    \caption{A interseção $X \cap Y$ de dois conjuntos é o conjunto de
+    !!{elemento}s que eles tem em comum.}
+  %\caption{The intersection $X \cap Y$ of two sets is the set of
+   % !!{element}s they have in common.}
+\end{figure}
+
+\begin{ex}
+Se dois conjuntos não possuem !!{elemento}s em comum, sua interseção é vazia:
+$\{ a, b, c\} \cap \{ 0, 1\} = \emptyset$.
+
+Se dois conjuntos tem !!{elemento}s em comum, sua interseção é o conjunto
+de todos esses: $\{a, b, c \} \cap \{a, b, d \} = \{a, b\}$.
+
+A interseção de um conjunto com um de seus subconjuntos é somente o menor conjunto: $\{a, b, c\} \cap \{a, b\} = \{a, b\}$.
+
+A interseção de qualquer conjunto com o conjunto vazio é vazio:
+$\{a, b, c \} \cap \emptyset = \emptyset$.
+\end{ex}
+
+%\begin{ex}
+%If two sets have no !!{element}s in common, their intersection is empty:
+%$\{ a, b, c\} \cap \{ 0, 1\} = \emptyset$.
+
+%If two sets do have !!{element}s in common, their intersection is the set of
+%all those: $\{a, b, c \} \cap \{a, b, d \} = \{a, b\}$.
+
+%The intersection of a set with one of its subsets is just the smaller
+%set: $\{a, b, c\} \cap \{a, b\} = \{a, b\}$.
+
+%The intersection of any set with the empty set is empty: $\{a, b, c \}
+%\cap \emptyset = \emptyset$.
+%\end{ex}
+
+\begin{prob}
+Prove rigorosamente que se $X \subseteq Y$, então $X \cap Y = X$.
+\end{prob}
+
+%\begin{prob}
+%Prove rigorously that if $X \subseteq Y$, then $X \cap Y = X$.
+%\end{prob}
+
+\begin{explain}
+Nós podemos também formar a união ou a interseção de mais de dois conjuntos.
+Uma maneira elegante de lidar com esse conceito geral é a seguinte: suponha que você colete todos os conjuntos que queira formar a união
+(ou interseção) em um único conjunto. Então, nós podemos definir a união
+de todos os nossos conjuntos originais como o conjunto de todos os objetos que pertencem à pelo menos um !!{elemento} do conjunto, e ainterseção como o conjunto de todos os objetos que pertencem à todo !!{elemento} do conjunto.
+\end{explain}
+
+%\begin{explain}
+%We can also form the union or intersection of more than two
+%sets. An elegant way of dealing with this in general is the
+%following: suppose you collect all the sets you want to form the union
+%(or intersection) of into a single set. Then we can define the union
+%of all our original sets as the set of all objects which belong to at
+%least one !!{element} of the set, and the intersection as the set of
+%all objects which belong to every !!{element} of the set.
+%\end{explain}
+
+\begin{defn}
+Se $Z$ é um conjunto de conjuntos, então $\bigcup Z$ é o conjunto de !!{elemento}s de !!{elemento}s de~$Z$:
+\begin{align*}
+\bigcup Z & = \Setabs{x}{x \text{ pertence a um !!{elemento} de } Z},
+\text{ i.e.,}\\
+\bigcup Z & = \Setabs{x}{\text{existe um } Y \in Z
+  \text{ tal que } x \in Y}
+\end{align*}
+\end{defn}
+
+%\begin{defn}
+%If $Z$ is a set of sets, then $\bigcup Z$ is the set of !!{element}s of
+%!!{element}s of~$Z$:
+%\begin{align*}
+%\bigcup Z & = \Setabs{x}{x \text{ belongs to an !!{element} of } Z},
+%\text{ i.e.,}\\
+%\bigcup Z & = \Setabs{x}{\text{there is a } Y \in Z
+%  \text{ so that } x \in Y}
+%\end{align*}
+%\end{defn}
+
+\begin{defn}
+Se $Z$ é um conjunto de conjuntos, então $\bigcap Z$ é o conjunto de objetos em que todos os elementos de~$Z$ tem em comum:
+\begin{align*}
+\bigcap Z & = \Setabs{x}{x \text{ pertence a todo elemento de } Z},
+\text{ i.e.,}\\
+\bigcap Z & = \Setabs{x}{\text{para todo } Y \in Z, x \in Y}
+\end{align*}
+\end{defn}
+
+%\begin{defn}
+%If $Z$ is a set of sets, then $\bigcap Z$ is the set of objects which
+%all elements of~$Z$ have in common:
+%\begin{align*}
+%\bigcap Z & = \Setabs{x}{x \text{ belongs to every element of } Z},
+%\text{ i.e.,}\\
+%\bigcap Z & = \Setabs{x}{\text{for all } Y \in Z, x \in Y}
+%\end{align*}
+%\end{defn}
+
+\begin{ex}
+Suponha que $Z = \{ \{ a, b \}, \{ a, d, e \}, \{ a, d \} \}$.
+Então, $\bigcup Z = \{ a, b, d, e \}$ e $\bigcap Z = \{ a \}$.
+\end{ex}
+
+%\begin{ex}
+%Suppose $Z = \{ \{ a, b \}, \{ a, d, e \}, \{ a, d \} \}$.
+%Then $\bigcup Z = \{ a, b, d, e \}$ and $\bigcap Z = \{ a \}$.
+%\end{ex}
+Nós podemos também fazer o mesmo para uma sequência de conjuntos $X_1$, $X_2$, \dots
+\begin{align*}
+\bigcup_i X_i & = \Setabs{x}{x \text{ pertence a um dos } X_i}\\
+\bigcap_i X_i & = \Setabs{x}{x \text{ pertence à todo } X_i}.
+\end{align*}
+
+%We could also do the same for a sequence of sets $X_1$, $X_2$, \dots
+%\begin{align*}
+%\bigcup_i X_i & = \Setabs{x}{x \text{ belongs to one of the } X_i}\\
+%\bigcap_i X_i & = \Setabs{x}{x \text{ belongs to every } X_i}.
+%\end{align*}
+
+\begin{defn}[Diferença]
+A \emph{diferença}~$X \setminus Y$ é o conjunto de todos os !!{elemento}s de~$X$ que não são também elementos de~$Y$, i.e.,
+\[
+X\setminus Y = \Setabs{x}{x\in X \text{ e } x \notin Y}.
+\]
+\end{defn}
+
+%\begin{defn}[Difference]
+%The \emph{difference}~$X \setminus Y$ is the set of all !!{element}s of
+%$X$ which are not also !!{element}s of~$Y$, i.e.,
+%\[
+%X\setminus Y = \Setabs{x}{x\in X \text{ and } x \notin Y}.
+%\]
+%\end{defn}
+
+\begin{figure}
+  \centerline{\includegraphics[width=\olphotowidth]
+    {\olpath/assets/diagrams/difference.tikz}}
+    \caption{A diferença $X \setminus Y$ de dois conjuntosé o conjunto daqueles !!{elemento}s de~$X$ que também não são elementos de~$Y$.}
+    %\caption{The difference $X \setminus Y$ of two sets is the set of
+    %those !!{element}s of~$X$ which are not also elements of~$Y$.}
+\end{figure}
+
+\end{document}
